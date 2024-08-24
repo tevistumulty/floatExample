@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+img {
+	/*Default value is inline*/
+	display: block;
+	/*
+	height: 300px;
+	width: 300px;
+	*/
+}
+
+#arch_today {
+	float: left;
+}
+
+/*
+#p1
+.par {
+	font-weight: bold;
+}
+*/
+
+#arch_construction {
+	float: right;
+}
+
+#arch_lightning {
+	/*clear: left;*/
+	/*position: relative;*/
+	/*relative, fixed, absolute*/
+	/*left: 30px;*/
+	/*top: 30px;*/
+	/*position: fixed;*/
+	right: 200px;
+	bottom: 200px;
+	/*For absolute, use bottom -200px to start below viewport*/
+	position: absolute;
+	/*left: 200px;
+	top: 200px;*/
+}
+	
+#p3 {
+	clear: rigth;
+	/*clear: both;*/
+}
+
+/*
+RESOURCES:
+https://www.w3schools.com/cssref/pr_class_display.php
+https://www.w3schools.com/css/css_float.asp
+https://www.w3schools.com/css/css_float_clear.asp
+*/

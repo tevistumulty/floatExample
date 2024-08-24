@@ -1,0 +1,111 @@
+Before adding anything, notice that as content goes top to bottom in the HTML file,
+it goes left to right in the browser window.
+
+1. Add this to the empty CSS file:
+
+img {
+	display: block;
+}
+
+Reload the page and notice that all of the content now appears to go down the page
+instead of left to right.  The default is "inline".  Other common values are
+grid, none, and flex (among others).  The "display" property controls how content
+is displayed in the page.  You will find "block" used frequently because it works
+well when you want to float content to the left or right, as below.
+
+2. Add this to the CSS file (it doesn't matter where):
+
+#arch_today {
+	float: left;
+}
+
+Reload the page and note that the first image is in the left upper corner, but all
+the other content now appears to the right of the image UNTIL that content "runs out"
+of room, and then it resumes left to right (at the bottom of the page) like before.
+
+NOTE: Add <p>...</p> around the text and reload the page.  Notice that the appearance
+of the text stays the same, but now it's treated as a more cohesive unit.
+
+3. Add this to the CSS file:
+
+#arch_construction {
+	float: right;
+}
+
+Reload the page and note that the "arch_construction" image floats to the right side 
+of page and all of the other content rolls up between the "arch_today" and 
+"arch_construction" images.
+
+4. Next, add this to the CSS file:
+
+#arch_prince {
+	clear: right;
+}
+
+Reload the page and notice that the Prince image moves down below the end of the
+"arch_before" image, but it's still to the right of the "arch_today" image.  
+The reason is that we only cleared "right side" floats, not "left side" floats.
+
+You can clear to the right, left, or both.  Change to this:
+
+#arch_prince {
+	clear: both;
+}
+
+Now all of the content from the "arch_prince" image and beyond stacks up like 
+before any floating was added.  This is what "float" and "clear" are used for.
+
+5. Now, add the following to the CSS file:
+
+#arch_lightning {
+	position: relative;
+	left: 30px;
+	top: 30px;
+}
+
+Commons position property values are relative, fixed, and absolute (and static by
+default so you won't set that often).
+
+The "relative" setting moves the component relative to where it would otherwise
+be without moving anything else.  Increase the top and left properties a few times
+(10px at a time in each direction) and reload the page.  You'll see the "arch_lighting"
+image move to the right and down without impacting anything else on the page.
+You can also specify distance from the right or bottom.
+
+6. Change to "fixed" and resize:
+
+#arch_lightning {
+	position: fixed;
+	left: 200px;
+	top: 200px;
+}
+
+Reload and notice that the image is now probably on top of some other content.
+It's 200 pixels from the top of the viewport (the visible browser window area) 
+and 200 pixels from the left.  Again, you can change to right and bottom.
+Scroll around on the window and notice that the image doesn't move.  The viewport
+is the visible area on your screen and this is where the image is affixed.
+
+7. Lastly, change to "absolute":
+
+#arch_lightning {
+	position: absolute;
+	left: 200px;
+	top: 200px;
+}
+
+Now if you scroll the page, the image will "stick" to the page and move with the
+scrolling.  Also, note that if you set the "bottom" property, it will begin at 
+that location from the initial viewport, but then stick to the page.
+
+Do you want to start out BELOW the initial viewport?  Try doing this:
+
+bottom: -200px;
+
+
+
+RESOURCES:
+https://www.w3schools.com/cssref/pr_class_display.php
+https://www.w3schools.com/css/css_float.asp
+https://www.w3schools.com/css/css_float_clear.asp
+
